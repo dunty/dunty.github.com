@@ -1,6 +1,7 @@
 ---
 layout: page
-title: 搭建
+title: Hello World!
+tagline: Supporting tagline
 ---
 
 # 如何搭建 git github jekyllbootstrap markdownpad 来写自己的Blog #
