@@ -77,3 +77,21 @@ Windows平台推荐使用 [MarkdownPad](http://markdownpad.com/)
 ## 语法检查 ##
 push本地的repository之后却收到`Page build failure`的邮件，原因是github的jekyll更新版本了，在生成静态HTML文件的时候加强了语法和错误的检查，所以过去可以忽略的一点小错误成了现在致命的伤。
 如 超链接标识中的 title 部分不能为空`[MarkdownPad](http://markdownpad.com/ "")`，必须要填写文字`[MarkdownPad](http://markdownpad.com/ "title")`。
+
+## 目录组织 ##
+
+index.md 是根下的文件，需要修改成自己用的
+
+_posts目录下则是保存post的地方，文件名格式必须是 YYYY-MM-DD-titles.md
+
+## 主要的git命令 ##
+这些命名需要在自己的 本地 仓库名 目录下 执行：
+    git add .
+    git commit -m "comment"
+    git push
+
+`git add .`用于标识修改的内容，本地所有
+
+`git commit`本地提交
+
+`git push`提交到github
