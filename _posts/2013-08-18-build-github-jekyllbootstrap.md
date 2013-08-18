@@ -30,3 +30,5 @@ Go to your https://github.com and create a new repository named USERNAME.github.
 
 [github for windows guide](https://help.github.com/articles/getting-started-with-github-for-windows "windows")
 Getting Started with GitHub for Windows
+
+GitHub for Windows was designed from the ground-up to not only be the best GitHub client available, but the best git client, period. It makes heavy use of Windows' sexy Metro look. Everything looks, acts, and feels like a native Windows program.
