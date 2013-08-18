@@ -72,3 +72,8 @@ After GitHub has a couple minutes to do its magic your blog will be publicly ava
 [英文完整版](http://daringfireball.net/projects/markdown/syntax "英文完整版")
 
 Windows平台推荐使用 [MarkdownPad](http://markdownpad.com/)
+
+## **语法检查** ##
+push本地的repository之后却收到`Page build failure`的邮件，原因是github的jekyll更新版本了，在生成静态HTML文件的时候加强了语法和错误的检查，所以过去可以忽略的一点小错误成了现在致命的伤。
+如 超链接标识中的 title 部分不能为空`[MarkdownPad](http://markdownpad.com/ "")`，必须要填写文字`[MarkdownPad](http://markdownpad.com/ "title")`。
+
