@@ -84,15 +84,4 @@ index.md 是根下的文件，需要修改成自己用的
 
 _posts目录下则是保存post的地方，文件名格式必须是 YYYY-MM-DD-titles.md
 
-## 主要的git命令 ##
-这些命名需要在自己的 本地 仓库名 目录下 执行：
 
-    git add .
-    git commit -m \"comment\"
-    git push
-
-`git add .`用于标识修改的内容，本地所有
-
-`git commit`本地提交
-
-`git push`提交到github
