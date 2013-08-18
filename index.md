@@ -1,3 +1,7 @@
+---
+layout: page
+title: First Page!
+---
 # 如何搭建 git github jekyllbootstrap markdownpad 来写自己的Blog #
 
 **github** 开放、进取、共享。
