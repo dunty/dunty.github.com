@@ -1,7 +1,9 @@
 ---
-layout: page
-title: First Page!
-tagline: Supporting tagline
+layout: post
+title: "深入理解C里面的switch"
+description: ""
+category: C
+tags: [c, Programming Language]
 ---
 {% include JB/setup %}
 

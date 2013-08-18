@@ -1,7 +1,9 @@
 ---
-layout: page
-title: First Page!
-tagline: Supporting tagline
+layout: post
+title: "如何搭建 git github jekyllbootstrap markdownpad 来写自己的Blog"
+description: ""
+category: blog
+tags: [github, blog]
 ---
 {% include JB/setup %}
 
