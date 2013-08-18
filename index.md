@@ -3,6 +3,7 @@ layout: page
 title: Hello World!
 tagline: Supporting tagline
 ---
+{% include JB/setup %}
 
 # 如何搭建 git github jekyllbootstrap markdownpad 来写自己的Blog #
 
