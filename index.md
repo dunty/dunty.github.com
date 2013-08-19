@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 把握当下
+title: 把握当下 
 ---
 {% include JB/setup %}
 
