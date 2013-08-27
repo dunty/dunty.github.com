@@ -48,7 +48,7 @@ Linux 64 bit
 
 点击Install Package之后，稍等一会，就出先搜索安装的列表。
 
-2、 ctags  
+3、 ctags  
 -------------
 
 这个插件能跨文件跳转，跳转到指定函数声明的地方。 使用package control 搜索ctags 进行安装。 （最舍不得netbeans就是这个函数跳转功能了，这个插件实现了！！）。
@@ -70,13 +70,13 @@ Linux 64 bit
 
 或者在sublime项目文件夹右键， 会出现Ctag:Rebuild Tags 的菜单。点击它，然后会生成.tags的文件。
 
-3、 SVN
+4、 SVN
 
 搜索svn显示以后直接回车，安装，安装以后可以直接在文件目录或者文件编辑中右键来提交和更新文件了。
 快捷键 alt+c 提交 ，alt+u 更新。
 
 
-4、emmet (ex - zencoding)
+5、emmet (ex - zencoding)
 
 敲打html和css神器啊，强烈推荐。在window显示下方输入框命令是ctrl+alt+enter.在mac下面是control+alt+enter.
 
@@ -89,7 +89,7 @@ Linux 64 bit
 步骤一：
 首先确保你电脑安装了php，并把php设置到环境变量里了。
 
-步骤二：点击 sublime_text的“工具”->"编译系统"->"编译新系统" 
+步骤二：点击 sublime text的“工具”->"编译系统"->"编译新系统" 
 步骤三：输入编译脚本，输入如下：
     {
     "cmd": ["php", "$file"],
@@ -158,7 +158,7 @@ sublime本身不支持GBK编码， 可以安装这个插件让它支持。
 9、格式化PHP代码 php-beautifier
 
 安装 php-beautifier 插件，使用php-beautifier还需要安装 PHP Beutifier的pear包：
-pear install PHP_Beautifier
+    pear install PHP_Beautifier
 
 安装好后， 打开PHP文件,ctrl+alt+f 就能为你自动格式化代码。
  
@@ -190,7 +190,7 @@ pear install PHP_Beautifier
 
 按Ctrl + Shift + P
 输入pci 后回车(Package Control: Install Package)
-稍等... ^_^
+稍等... 
 输入Markdown Preview回车
 
 四、编辑
