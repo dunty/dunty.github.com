@@ -79,3 +79,5 @@ to
 now it works on both machines with umlauts in code blocks and normal text. (the other machine is an ubuntu 11.04)
 
 11、以后就可以运行 `jekyll serve`了。
+
+参考 [Running Jekyll on Windows](http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html)
