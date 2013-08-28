@@ -91,15 +91,20 @@ Linux 64 bit
 
 步骤二：点击 sublime text的“工具”->"编译系统"->"编译新系统" 
 步骤三：输入编译脚本，输入如下：
+
     {
     "cmd": ["php", "$file"],
     "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
     "selector": "source.php"
     }
+
 另存到Sublime Tex的Data目录下，如下是我的目录： 
+
     E:\softwave\Sublime Text 2.0.1\Data\Packages\PHP
+
 文件名叫：PHP.sublime-build
 步骤四：新建个文件，写几句脚本，保存。按Ctrl+B编译
+
     <?php
     echo "test";
     ?>
@@ -157,6 +162,7 @@ sublime本身不支持GBK编码， 可以安装这个插件让它支持。
 9、格式化PHP代码 php-beautifier
 
 安装 php-beautifier 插件，使用php-beautifier还需要安装 PHP Beutifier的pear包：
+
     pear install PHP_Beautifier
 
 安装好后， 打开PHP文件,ctrl+alt+f 就能为你自动格式化代码。
