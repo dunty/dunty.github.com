@@ -97,9 +97,8 @@ Linux 64 bit
     "selector": "source.php"
     }
 另存到Sublime Tex的Data目录下，如下是我的目录： 
-E:\softwave\Sublime Text 2.0.1\Data\Packages\PHP 
+    E:\softwave\Sublime Text 2.0.1\Data\Packages\PHP
 文件名叫：PHP.sublime-build
-
 步骤四：新建个文件，写几句脚本，保存。按Ctrl+B编译
     <?php
     echo "test";
