@@ -64,19 +64,17 @@ to generate the config.yml file to be used later in this Step
 
     gem install jekyll
 
-10、安装好后，运行jekyll serve，出错，提示`invalid byte sequence in GBK`
+10、安装好后，运行jekyll serve，出错，提示`invalid byte sequence in GBK`，如：
 
     /home/ben/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/convertible.rb:32:in `read_yaml': invalid byte sequence in US-ASCII (ArgumentError)
 
-I fixed that with changing the line 29 in convertible.rb from
+应该是jekyll的一个bug, fixed that with changing the line 29 in convertible.rb from
 
     self.content = File.read(File.join(base, name))
 
 to
 
     self.content = File.read(File.join(base, name), :encoding => "utf-8")
-
-now it works on both machines with umlauts in code blocks and normal text. (the other machine is an ubuntu 11.04)
 
 11、以后就可以运行 `jekyll serve`了。
 
