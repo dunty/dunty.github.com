@@ -42,6 +42,13 @@ GitHub for Windows new repository buttonAlternatively, you can click on + add at
 
 安装后就会在PC上有一个git的环境了，可使用图形界面的，也可使用github shell。
 
+2013-09-01: （以前安装时是在win7/8下）在XP和IE下下载时，会自动使用讯雷下载，然后运行 `GitHubSetup.exe`，则无法安装上，查到
+[Introducing GitHub For Windows](http://haacked.com/archive/2012/05/21/introducing-github-for-windows.aspx#87324)中说明：
+
+	We use ClickOnce to install the application and to provide Google Chrome style silent, automated, updates that install in the background to keep it up-to-date.
+
+因此，尝试在Chrome下下载并点击运行，安装成功。
+
 
 ## jekyllbootstrap ##
 [http://jekyllbootstrap.com/](http://jekyllbootstrap.com/ "jekyllbootstrap")

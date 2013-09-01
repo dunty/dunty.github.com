@@ -79,3 +79,42 @@ to
 11、以后就可以运行 `jekyll serve`了。
 
 参考 [Running Jekyll on Windows](http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html)
+
+
+2013-09-01: 在xp下，安装了jekyll后，到`ruby\lib\ruby\gems\2.0.0\gems\jekyll-1.1.2\test\source>`目录下，测试jekyll，发现：
+
+    Generating... You are missing a library required for Textile. Please run:
+    $ [sudo] gem install RedCloth
+
+    Missing dependency: RedCloth
+
+然后使用`gem install Redcloth`安装，安装时又发现：
+
+    Parsing documentation for RedCloth-4.2.9-x86-mingw32
+    unable to convert "\x90" from ASCII-8BIT to UTF-8 for lib/1.8/redcloth_scan.so, skipping
+    unable to convert "\x90" from ASCII-8BIT to UTF-8 for lib/1.9/redcloth_scan.so, skipping
+
+网上找[rdoc](https://github.com/rdoc/rdoc/commit/ceb81dd11911fb8a1f7342f5710f6afdd2036fc7)，说是rdoc的bug，`rdoc/rdoc.rb`中增加`return if RDoc::Parser.binary? filename`：
+
+    343:     @stats.add_file filename
+ 
+    +    return if RDoc::Parser.binary? filename
+
+    345:     content = RDoc::Encoding.read_file filename, encoding
+ 
+    347:     return unless content
+
+终于能安装了，安装好后，运行jekyll，仍然报缺少RedCloth。再找，[Running Jekyll on Windows 7](http://stackoverflow.com/questions/7236269/running-jekyll-on-windows-7)，说明需要先运行`redcloth.bat`：
+
+    After gem install RedCloth run redcloth.bat from \Ruby\bin (replace \Ruby\ with the Ruby installation dir).
+    If it complains about not finding the path 1.9/redcloth_scan then do the following:
+    Create a dir named 1.9 in \Ruby\lib\ruby\gems\1.9.1\gems\RedCloth-4.2.8\ext
+    Copy everything from \Ruby\lib\ruby\gems\1.9.1\gems\RedCloth-4.2.8\ext\redcloth_scan in the 1.9 folder just created.
+
+运行redcloth.bat，但是报的是少 2.0/redcloth_scan，尝试半天，最终发现 [RedCloth loaderror on ruby 2.0.0 [i386-mingw32]](http://stackoverflow.com/questions/17682753/redcloth-loaderror-on-ruby-2-0-0-i386-mingw32)：
+
+    You might wanna stay with 1.9.3 for now, if you must use RedCloth.
+    RedCloth doesn't seem to support 2.0.0 yet.
+
+无解了。当前只使用markdown，不使用textile，因此暂无问题。
+
