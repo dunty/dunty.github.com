@@ -2,8 +2,8 @@
 layout: post
 title: "线上系统调试利器firephp+codeigniter"
 description: ""
-category: php
-tags: [php, firphp, codeigniter]
+category: PHP
+tags: [php, firephp, codeigniter]
 ---
 {% include JB/setup %}
 

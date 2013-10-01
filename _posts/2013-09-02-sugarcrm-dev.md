@@ -2,8 +2,8 @@
 layout: post
 title: "获取 sugarcrm dev"
 description: ""
-category: basic
-tags: [sugarcrm]
+category: SUGARCRM
+tags: [sugarcrm, php]
 ---
 {% include JB/setup %}
 

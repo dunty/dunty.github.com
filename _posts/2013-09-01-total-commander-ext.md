@@ -2,7 +2,7 @@
 layout: post
 title: "Total Commander 8.01 中文增强"
 description: ""
-category: basic
+category: TOOLS
 tags: [tc, total commander]
 ---
 {% include JB/setup %}

@@ -2,8 +2,8 @@
 layout: post
 title: "安装使用Sublime Text 2"
 description: ""
-category: basic
-tags: [sublime, plugins]
+category: TOOLS
+tags: [sublime text 2, plugins, php]
 ---
 {% include JB/setup %}
 
