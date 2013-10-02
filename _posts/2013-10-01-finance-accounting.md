@@ -12,3 +12,6 @@ tags: [accounting, finance]
 ppt: [记帐用的ppt](/assets/2013-10-01-finance-accounting/accounting.ppt)
 
 xls: [记帐用的xls](/assets/2013-10-01-finance-accounting/accounting.xls)
+
+xls2: [记帐用的xls2](/assets/2013-10-01-finance-accounting/accounting2.xls)
+

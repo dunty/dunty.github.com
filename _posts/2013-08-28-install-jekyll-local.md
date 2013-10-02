@@ -2,7 +2,7 @@
 layout: post
 title: "安装使用本地jekyll"
 description: ""
-category: TOOLS
+category: tools
 tags: [jekyll, local]
 ---
 {% include JB/setup %}

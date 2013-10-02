@@ -2,7 +2,7 @@
 layout: post
 title: "如何搭建 git github jekyllbootstrap markdownpad 来写自己的Blog"
 description: ""
-category: TOOLS
+category: tools
 tags: [github, jekyll, markdown, blog]
 ---
 {% include JB/setup %}
