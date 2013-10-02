@@ -45,7 +45,7 @@ blog分类定义：
 
 1. blogcate：如何分类和标签Blog内容，收藏网站，可借鉴的jekyll做的网站
 
-2. 4tom：为明明查找的内容
+2. 4tom：为Tom查找的内容
 
 3. php：PHP编程方面
 
