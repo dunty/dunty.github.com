@@ -22,6 +22,8 @@ tags: [jekyll, local]
 
 3、自行下载[Ruby 2.0.0-p247](http://dl.bintray.com/oneclick/rubyinstaller/ruby-2.0.0-p247-i386-mingw32.7z?direct)
 
+-----或者使用1.9.3 并且需要使用[rubyinstaller](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-1.9.3-p448.exe?direct) 这样的包.
+
 4、自行下载[DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe](http://rubyforge.org/frs/download.php/76805/DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe)
 
 5、安装jekyll
@@ -53,7 +55,7 @@ to generate the config.yml file to be used later in this Step
     # - C:/ruby19trunk
     # - C:/ruby192dev
     #
-    ---
+    \-\-\-
     - C:/ruby
 
 8、 Run the following command to install to DevKit enhance your installed Rubies. This step installs (or updates) an operating_system.rb file into the relevant directory needed to implement a RubyGems
@@ -64,7 +66,10 @@ to generate the config.yml file to be used later in this Step
 
     gem install jekyll
 
-10、安装好后，运行jekyll serve，出错，提示`invalid byte sequence in GBK`，如：
+
+## 10、开始运行，恶梦开始
+
+1、安装好后，运行jekyll serve，出错，提示`invalid byte sequence in GBK`，如：
 
     /home/ben/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/convertible.rb:32:in `read_yaml': invalid byte sequence in US-ASCII (ArgumentError)
 
@@ -76,10 +81,59 @@ to
 
     self.content = File.read(File.join(base, name), :encoding => "utf-8")
 
-11、以后就可以运行 `jekyll serve`了。
+还需要修改`Ruby\lib\ruby\gems\1.9.1\gems\jekyll-1.2.1\lib\jekyll\tags\include.rb`.
 
-参考 [Running Jekyll on Windows](http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html)
+2、`cannot load such file -- yajl/2.0/yajl`
 
+    gem uninstall yajl-ruby
+    Ensure all the versions (ruby and x86-mingw32 are uninstalled)
+    gem install yajl-ruby --platform=ruby
+
+3、`Liquid Exception: No such file or directory - /bin/sh in 2012-01-17-test-post.md`
+
+    gem uninstall pygments.rb --version "=0.5.1" -- or 0.5.2
+    gem install pygments.rb --version "=0.5.0"
+
+4、提示python没安装：
+
+4.1 需要安装Python，注意不要安装3.2，要安装2.7.5
+
+4.2 需要安装 [distribute_setup.py](http://python-distribute.org/distribute_setup.py)
+
+-------------------------
+Installation Instructions
+-------------------------
+
+Distribute is only released as a source distribution.
+
+It can be installed using pip, and can be done so with the source tarball,
+or by using the ``distribute_setup.py`` script provided online.
+
+``distribute_setup.py`` is the simplest and preferred way on all systems.
+
+distribute_setup.py
+===================
+
+Download
+`distribute_setup.py <http://python-distribute.org/distribute_setup.py>`_
+and execute it, using the Python interpreter of your choice.
+
+If your shell has the ``curl`` program you can do::
+
+    $ curl -O http://python-distribute.org/distribute_setup.py
+    $ python distribute_setup.py
+
+Notice this file is also provided in the source release.
+
+4.3 需要安装 Pygments，用于代码的高亮显示
+
+    easy_install Pygments   
+
+4.4 需要加path
+
+    Python;Python\Scripts
+
+5、安装包时会出现：
 
 2013-09-01: 在xp下，安装了jekyll后，到`ruby\lib\ruby\gems\2.0.0\gems\jekyll-1.1.2\test\source>`目录下，测试jekyll，发现：
 
@@ -117,4 +171,49 @@ to
     RedCloth doesn't seem to support 2.0.0 yet.
 
 无解了。当前只使用markdown，不使用textile，因此暂无问题。
+
+6、使用jekyllbootstrap的样例总是编译出错，原因是`_posts\core-samples\2011-12-29-jekyll-introduction.md`，这个文件中：
+
+    Jekyll supports various configuration options that are fully outlined here:<https://github.com/mojombo/jekyll/wiki/Configuration>
+
+其中的<被放到了行首，就出错了。
+
+
+## 11、设置语法高亮
+
+把jekyll 模板中的 `\ruby\lib\ruby\gems\2.0.0\gems\jekyll-1.2.1\lib\site_template\css\syntax.css` 复制到assets/themes/css目录中，
+
+在最后增加，用于区分行号：
+
+{% highlight css %}
+.highlight .lineno { color: #aa0000 } /*  */
+{% endhighlight %}
+
+并且修改_include/themes/twitter/default.html，加入:
+
+{% highlight html %}
+<link href="{{ ASSET_PATH }}/css/syntax.css?body=1" rel="stylesheet" type="text/css" media="all">
+{% endhighlight %}
+
+
+如下是语法高亮、和行号示例：
+{% highlight text %}
+{% raw %}
+{% highlight ruby linenos %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
+{% endraw %}
+{% endhighlight %}
+
+效果：
+{% highlight ruby linenos %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
+
+
+参考 [Running Jekyll on Windows](http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html)
 
