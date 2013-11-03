@@ -1,13 +1,41 @@
 /* Custom container */
+body {
+/*  background-color: #4e74a6;
+*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2e231f;
+    font-family: inherit;
+    font-weight: bold;
+    margin: 10px 0;
+    text-rendering: optimizelegibility;
+
+}
+
+.page-header {
+    background-color: #bdbf78;
+}
+
 .container-narrow {
   margin: 0 auto;
-  max-width: 700px; }
+  max-width: 700px; 
+}
 
 .container-narrow > hr {
   margin: 30px 0; }
 
+.navbar-inner
+{
+  background-color: #263c8b;
+}
+
 .navbar .nav {
-  float: right; }
+  float: right; 
+  background-color: #263c8b;
+}
+
+
 
 /* posts index */
 .post > h3.title {

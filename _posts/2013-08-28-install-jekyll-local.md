@@ -212,7 +212,39 @@ end
 def foo
   puts 'foo'
 end
+def foo
+  puts 'foo'
+end
+def foo
+  puts 'foo'
+end
+def foo
+  puts 'foo'
+end
+def foo
+  puts 'foo'
+end
 {% endhighlight %}
+
+
+```ruby
+def foo
+  puts 'foo'
+end
+```
+
+```ruby linenos
+def foo
+  puts 'foo'
+end
+```
+
+- [ ] a task list item
+- [ ] list syntax required
+- [ ] normal **formatting**, @mentions, #1234 refs
+- [ ] incomplete
+- [x] completed
+
 
 
 参考 [Running Jekyll on Windows](http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html)
