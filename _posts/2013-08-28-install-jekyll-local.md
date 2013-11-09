@@ -22,7 +22,9 @@ tags: [jekyll, local]
 
 3、自行下载[Ruby 2.0.0-p247](http://dl.bintray.com/oneclick/rubyinstaller/ruby-2.0.0-p247-i386-mingw32.7z?direct)
 
------或者使用1.9.3 并且需要使用[rubyinstaller](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-1.9.3-p448.exe?direct) 这样的包.
+-----或者使用1.9.3 并且需要使用[rubyinstaller](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-1.9.3-p448.exe?direct) 这样的包.----- 
+
+2013-11-9: 1.9.3可能与下面的devkit不匹配，安装jekyll时编译失败，`make: *** [porter_wrap.o] Error 1`
 
 4、自行下载[DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe](http://rubyforge.org/frs/download.php/76805/DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe)
 
@@ -64,7 +66,7 @@ to generate the config.yml file to be used later in this Step
 
 9、 Install Jekyll using following command
 
-    gem install jekyll
+    gem install jekyll -V
 
 
 ## 10、开始运行，恶梦开始
@@ -83,11 +85,15 @@ to
 
 还需要修改`Ruby\lib\ruby\gems\1.9.1\gems\jekyll-1.2.1\lib\jekyll\tags\include.rb`.
 
+2013-11-9: jekyll 1.3.0 解决了这个问题，但是需要在_config.yml 中增加 `encoding : utf-8`
+
 2、`cannot load such file -- yajl/2.0/yajl`
 
     gem uninstall yajl-ruby
     Ensure all the versions (ruby and x86-mingw32 are uninstalled)
     gem install yajl-ruby --platform=ruby
+
+2013-11-9: 由于前次在 \_config.yml中增加了`markdown: redcarpet`，造成运行后无任务页面输出和提示，先注释掉。
 
 3、`Liquid Exception: No such file or directory - /bin/sh in 2012-01-17-test-post.md`
 
@@ -171,6 +177,17 @@ Notice this file is also provided in the source release.
     RedCloth doesn't seem to support 2.0.0 yet.
 
 无解了。当前只使用markdown，不使用textile，因此暂无问题。
+
+2013-11-9: 10月6日已经解决这个问题了：
+
+1.first install RedCloth-4.2.9
+
+    gem install RedCloth --platform==ruby -V
+
+2.create a directory '2.0' in `ruby\lib\ruby\gems\2.0.0\gems\RedCloth-4.2.9\ext`
+
+3.copy all files from `ruby\lib\ruby\gems\2.0.0\gems\RedCloth-4.2.9\ext\redcloth_scan` to the `ruby\lib\ruby\gems\2.0.0\gems\RedCloth-4.2.9\ext\2.0` directory
+
 
 6、使用jekyllbootstrap的样例总是编译出错，原因是`_posts\core-samples\2011-12-29-jekyll-introduction.md`，这个文件中：
 

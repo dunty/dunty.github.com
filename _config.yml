@@ -31,6 +31,8 @@ production_url : http://username.github.io
 port:        5000
 markdown: redcarpet
 
+encoding : utf-8
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
